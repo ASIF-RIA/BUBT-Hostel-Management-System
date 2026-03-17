@@ -1,41 +1,67 @@
-# Hostel Management System
+# BUBT Hostel Management System
 
-Windows Forms hostel management app built with **C#** on **.NET Framework 4.7.2** (Visual Studio solution + project).
+A Windows desktop application for managing hostel operations (students, employees, rooms, meals, and inventory). Built with **C# WinForms** on **.NET Framework 4.7.2**.
 
-## Features (screens/modules)
-- Student management (add/update/delete, list)
-- Employee management (add/update/delete, payments, working/vacated)
-- Rooms
-- Meals (new/update, calendar)
-- Inventory (new/update items, shopping list)
+## Key modules
+- **Students**: add / update / delete, list
+- **Employees**: add / update / delete, payments, working/vacated
+- **Rooms**: room management
+- **Meals**: meal setup and calendar
+- **Inventory**: items, updates, shopping list
 
 ## Tech stack
 - **C# WinForms** (`OutputType=WinExe`)
 - **.NET Framework 4.7.2**
-- **Visual Studio 2022** (solution format indicates VS 17)
+- **Visual Studio 2022** (solution targets VS 17 format)
+
+## Repository contents
+- `Hostel Management System (2).sln`: Visual Studio solution
+- `Hostel Management System (2).csproj`: project file
+- `*.cs`, `*.Designer.cs`, `*.resx`: WinForms source, designer, and resources
 
 ## Getting started
 
 ### Prerequisites
-- Windows
-- Visual Studio 2022 with the **.NET desktop development** workload
-- .NET Framework **4.7.2** targeting pack (installed by Visual Studio if needed)
+- Windows 10/11
+- Visual Studio 2022 with **.NET desktop development** workload
+- **.NET Framework 4.7.2** targeting pack (Visual Studio can install it)
 
-### Run (Visual Studio)
+### Run the app (Visual Studio)
 1. Open `Hostel Management System (2).sln`
-2. Set the project as Startup Project (if it isn’t already)
-3. Build and run:
-   - `Build` → `Build Solution`
-   - `Debug` → `Start Debugging`
+2. Make sure the project is set as the **Startup Project**
+3. `Build` → `Build Solution`
+4. `Debug` → `Start Debugging` (or press **F5**)
 
-## Notes / dependencies
+## Configuration
 
-### Guna UI2 (missing reference by default)
-This project references `Guna.UI2.dll` via an **absolute path** (from the original author’s machine), so the build may fail on a new PC until you fix the reference:
+### Database connection
+This project uses `System.Data.SqlClient`. Update the SQL Server connection string in `function.cs`:
+- `function.getConnection()` → `con.ConnectionString = "..."`;
 
-- Option A (recommended): add the library via **NuGet** (if available for your setup) and update the reference
-- Option B: place the `Guna.UI2.dll` on your machine and update the reference path in `Hostel Management System (2).csproj`
+If you plan to publish this repo publicly, **do not commit real credentials**. Prefer Windows Authentication or environment-specific configuration.
+
+### UI library: Guna UI2
+The project currently references `Guna.UI2.dll` via an **absolute path** in the `.csproj`, which may break builds on other machines.
+
+Recommended fixes:
+- **Option A (preferred)**: install/reference Guna UI2 in a portable way (e.g., NuGet if available for your setup)
+- **Option B**: add the DLL locally and update the reference path in `Hostel Management System (2).csproj`
+
+## Build output
+Compiled binaries are produced in:
+- `bin/Debug/`
+- `bin/Release/`
+
+These folders are intentionally ignored by git.
+
+## Troubleshooting
+- **Build fails with missing `Guna.UI2`**: fix the reference as described above.
+- **Database errors**: verify SQL Server is running and your connection string is correct.
+
+## Screenshots (optional)
+Add screenshots to a `docs/` folder and reference them here, for example:
+- `docs/dashboard.png`
 
 ## License
-Add a license if you plan to publish publicly.
+No license has been added yet. If you want others to use/modify this project publicly, add a license (e.g., MIT).
 
