@@ -1,0 +1,27 @@
+# Visual Studio / MSBuild
+.vs/
+**/[Bb]in/
+**/[Oo]bj/
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+*.vcxproj.user
+
+# Build results
+*.pdb
+*.cache
+*.log
+
+# NuGet
+packages/
+*.nupkg
+
+# Rider
+.idea/
+
+# OS / Editor
+Thumbs.db
+Desktop.ini
+.DS_Store
+
