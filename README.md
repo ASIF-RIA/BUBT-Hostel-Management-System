@@ -58,10 +58,6 @@ These folders are intentionally ignored by git.
 - **Build fails with missing `Guna.UI2`**: fix the reference as described above.
 - **Database errors**: verify SQL Server is running and your connection string is correct.
 
-## Screenshots (optional)
-Add screenshots to a `docs/` folder and reference them here, for example:
-- `docs/dashboard.png`
-
 ## License
 No license has been added yet. If you want others to use/modify this project publicly, add a license (e.g., MIT).
 
